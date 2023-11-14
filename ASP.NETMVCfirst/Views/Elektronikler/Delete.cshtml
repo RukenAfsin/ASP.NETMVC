@@ -1,0 +1,55 @@
+﻿@model ASP.NETMVCfirst.Models.ElektroniklerSet
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<h3>Silmek İstediğinize emin misiniz? </h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CihazAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CihazAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CihazMarka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CihazMarka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CihazModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CihazModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Geri Dön", "Index", new {@class="btn btn-primary"})
+        </div>
+    }
+</div>

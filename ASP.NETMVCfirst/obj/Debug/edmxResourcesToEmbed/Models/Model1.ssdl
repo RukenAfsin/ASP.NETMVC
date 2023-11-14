@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="drprojeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ElektroniklerSet">
+    <Key>
+      <PropertyRef Name="ENo" />
+    </Key>
+    <Property Name="ENo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CihazAdi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CihazMarka" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CihazModel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fiyat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KitaplarSet">
+    <Key>
+      <PropertyRef Name="KitapNo" />
+    </Key>
+    <Property Name="KitapNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KitapAdi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="YazarAdi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Yayınevi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="KitapTür" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BasimYili" Type="int" Nullable="false" />
+    <Property Name="Fiyat" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KullanıcılarSet">
+    <Key>
+      <PropertyRef Name="KNo" />
+    </Key>
+    <Property Name="KNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sifre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefon" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MüziklerSet">
+    <Key>
+      <PropertyRef Name="MüzikNo" />
+    </Key>
+    <Property Name="MüzikNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SanatciAdi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SarkiAdi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MüzikTür" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AlbümTür" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fiyat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="drprojeModelStoreContainer">
+    <EntitySet Name="ElektroniklerSet" EntityType="Self.ElektroniklerSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KitaplarSet" EntityType="Self.KitaplarSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KullanıcılarSet" EntityType="Self.KullanıcılarSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MüziklerSet" EntityType="Self.MüziklerSet" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

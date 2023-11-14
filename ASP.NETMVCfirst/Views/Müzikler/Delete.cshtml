@@ -1,0 +1,63 @@
+﻿@model ASP.NETMVCfirst.Models.MüziklerSet
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage3.cshtml";
+}
+
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SanatciAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SanatciAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SarkiAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SarkiAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MüzikTür)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MüzikTür)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbümTür)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlbümTür)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Geri Dön", "Index", new {@class="btn btn-primary"})
+        </div>
+    }
+</div>

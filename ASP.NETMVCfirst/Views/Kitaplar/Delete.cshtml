@@ -1,0 +1,72 @@
+﻿@model ASP.NETMVCfirst.Models.KitaplarSet
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KitapAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KitapAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YazarAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YazarAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yayınevi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yayınevi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KitapTür)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KitapTür)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BasimYili)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BasimYili)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Geri Dön", "Index", new { @class = "btn btn-secondary" })
+        </div>
+    }
+</div>

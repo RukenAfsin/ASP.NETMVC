@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="drprojeModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="ElektroniklerSets">
+      <EntityTypeMapping TypeName="drprojeModel.ElektroniklerSet">
+        <MappingFragment StoreEntitySet="ElektroniklerSet">
+          <ScalarProperty Name="ENo" ColumnName="ENo" />
+          <ScalarProperty Name="CihazAdi" ColumnName="CihazAdi" />
+          <ScalarProperty Name="CihazMarka" ColumnName="CihazMarka" />
+          <ScalarProperty Name="CihazModel" ColumnName="CihazModel" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KitaplarSets">
+      <EntityTypeMapping TypeName="drprojeModel.KitaplarSet">
+        <MappingFragment StoreEntitySet="KitaplarSet">
+          <ScalarProperty Name="KitapNo" ColumnName="KitapNo" />
+          <ScalarProperty Name="KitapAdi" ColumnName="KitapAdi" />
+          <ScalarProperty Name="YazarAdi" ColumnName="YazarAdi" />
+          <ScalarProperty Name="Yayınevi" ColumnName="Yayınevi" />
+          <ScalarProperty Name="KitapTür" ColumnName="KitapTür" />
+          <ScalarProperty Name="BasimYili" ColumnName="BasimYili" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MüziklerSet">
+      <EntityTypeMapping TypeName="drprojeModel.MüziklerSet">
+        <MappingFragment StoreEntitySet="MüziklerSet">
+          <ScalarProperty Name="MüzikNo" ColumnName="MüzikNo" />
+          <ScalarProperty Name="SanatciAdi" ColumnName="SanatciAdi" />
+          <ScalarProperty Name="SarkiAdi" ColumnName="SarkiAdi" />
+          <ScalarProperty Name="MüzikTür" ColumnName="MüzikTür" />
+          <ScalarProperty Name="AlbümTür" ColumnName="AlbümTür" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullanıcılarSet">
+      <EntityTypeMapping TypeName="drprojeModel.KullanıcılarSet">
+        <MappingFragment StoreEntitySet="KullanıcılarSet">
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="KNo" ColumnName="KNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

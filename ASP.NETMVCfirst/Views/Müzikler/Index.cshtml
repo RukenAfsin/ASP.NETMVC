@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ASP.NETMVCfirst.Models.MüziklerSet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage3.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create",null, new {@class="btn btn-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SanatciAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SarkiAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MüzikTür)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlbümTür)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanatciAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SarkiAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MüzikTür)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlbümTür)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.MüzikNo }, new {@class="btn btn-secondary"}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MüzikNo }, new {@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

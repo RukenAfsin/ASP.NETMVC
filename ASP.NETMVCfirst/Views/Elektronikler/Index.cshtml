@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ASP.NETMVCfirst.Models.ElektroniklerSet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<p>
+    @Html.ActionLink("Yeni Cihaz Ekle", "Create",null, new {@class="btn btn-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CihazAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CihazMarka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CihazModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CihazAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CihazMarka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CihazModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ENo }, new {@class="btn btn-primary"}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ENo }, new {@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

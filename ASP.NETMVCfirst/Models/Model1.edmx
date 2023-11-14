@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="drprojeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ElektroniklerSet">
+          <Key>
+            <PropertyRef Name="ENo" />
+          </Key>
+          <Property Name="ENo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CihazAdi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CihazMarka" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CihazModel" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KitaplarSet">
+          <Key>
+            <PropertyRef Name="KitapNo" />
+          </Key>
+          <Property Name="KitapNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KitapAdi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="YazarAdi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Yayınevi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="KitapTür" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BasimYili" Type="int" Nullable="false" />
+          <Property Name="Fiyat" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KullanıcılarSet">
+          <Key>
+            <PropertyRef Name="KNo" />
+          </Key>
+          <Property Name="KNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Sifre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Telefon" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MüziklerSet">
+          <Key>
+            <PropertyRef Name="MüzikNo" />
+          </Key>
+          <Property Name="MüzikNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SanatciAdi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SarkiAdi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MüzikTür" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AlbümTür" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="drprojeModelStoreContainer">
+          <EntitySet Name="ElektroniklerSet" EntityType="Self.ElektroniklerSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KitaplarSet" EntityType="Self.KitaplarSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KullanıcılarSet" EntityType="Self.KullanıcılarSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MüziklerSet" EntityType="Self.MüziklerSet" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="drprojeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ElektroniklerSet">
+          <Key>
+            <PropertyRef Name="ENo" />
+          </Key>
+          <Property Name="ENo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CihazAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CihazMarka" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CihazModel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KitaplarSet">
+          <Key>
+            <PropertyRef Name="KitapNo" />
+          </Key>
+          <Property Name="KitapNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KitapAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="YazarAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Yayınevi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KitapTür" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BasimYili" Type="Int32" Nullable="false" />
+          <Property Name="Fiyat" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MüziklerSet">
+          <Key>
+            <PropertyRef Name="MüzikNo" />
+          </Key>
+          <Property Name="MüzikNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SanatciAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SarkiAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MüzikTür" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AlbümTür" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ElektroniklerSets" EntityType="Self.ElektroniklerSet" />
+          <EntitySet Name="KitaplarSets" EntityType="Self.KitaplarSet" />
+          <EntitySet Name="MüziklerSet" EntityType="Self.MüziklerSet" />
+          <EntitySet Name="KullanıcılarSet" EntityType="drprojeModel.KullanıcılarSet" />
+        </EntityContainer>
+        <EntityType Name="KullanıcılarSet">
+          <Key>
+            <PropertyRef Name="KNo" />
+          </Key>
+          <Property Name="KNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="drprojeModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="ElektroniklerSets">
+            <EntityTypeMapping TypeName="drprojeModel.ElektroniklerSet">
+              <MappingFragment StoreEntitySet="ElektroniklerSet">
+                <ScalarProperty Name="ENo" ColumnName="ENo" />
+                <ScalarProperty Name="CihazAdi" ColumnName="CihazAdi" />
+                <ScalarProperty Name="CihazMarka" ColumnName="CihazMarka" />
+                <ScalarProperty Name="CihazModel" ColumnName="CihazModel" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KitaplarSets">
+            <EntityTypeMapping TypeName="drprojeModel.KitaplarSet">
+              <MappingFragment StoreEntitySet="KitaplarSet">
+                <ScalarProperty Name="KitapNo" ColumnName="KitapNo" />
+                <ScalarProperty Name="KitapAdi" ColumnName="KitapAdi" />
+                <ScalarProperty Name="YazarAdi" ColumnName="YazarAdi" />
+                <ScalarProperty Name="Yayınevi" ColumnName="Yayınevi" />
+                <ScalarProperty Name="KitapTür" ColumnName="KitapTür" />
+                <ScalarProperty Name="BasimYili" ColumnName="BasimYili" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MüziklerSet">
+            <EntityTypeMapping TypeName="drprojeModel.MüziklerSet">
+              <MappingFragment StoreEntitySet="MüziklerSet">
+                <ScalarProperty Name="MüzikNo" ColumnName="MüzikNo" />
+                <ScalarProperty Name="SanatciAdi" ColumnName="SanatciAdi" />
+                <ScalarProperty Name="SarkiAdi" ColumnName="SarkiAdi" />
+                <ScalarProperty Name="MüzikTür" ColumnName="MüzikTür" />
+                <ScalarProperty Name="AlbümTür" ColumnName="AlbümTür" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KullanıcılarSet">
+            <EntityTypeMapping TypeName="drprojeModel.KullanıcılarSet">
+              <MappingFragment StoreEntitySet="KullanıcılarSet">
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="KNo" ColumnName="KNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

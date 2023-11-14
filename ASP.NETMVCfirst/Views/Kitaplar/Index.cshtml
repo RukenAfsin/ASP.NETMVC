@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ASP.NETMVCfirst.Models.KitaplarSet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new {@class="btn btn-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KitapAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YazarAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yayınevi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KitapTür)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasimYili)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KitapAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YazarAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yayınevi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KitapTür)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasimYili)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id =item.KitapNo },new { @class = "btn btn-success"}) |
+            @Html.ActionLink("Sil", "Delete", new {  id = item.KitapNo }, new { @class = "btn btn-success" })
+        </td>
+    </tr>
+}
+
+</table>
